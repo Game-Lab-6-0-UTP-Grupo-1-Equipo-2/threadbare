@@ -271,7 +271,7 @@ position = Vector2(826, 413)
 sprite_frames = ExtResource("17_lckip")
 
 [node name="HintSign2" parent="OnTheGround/SequencePuzzle/Signs" unique_id=2039036310 instance=ExtResource("16_58ehn")]
-position = Vector2(819, 212)
+position = Vector2(141, 264)
 sprite_frames = ExtResource("18_k3mei")
 
 [node name="Steps" type="Node2D" parent="OnTheGround/SequencePuzzle" unique_id=666035394]

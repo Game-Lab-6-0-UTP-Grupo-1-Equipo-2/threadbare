@@ -1,6 +1,7 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://bp7m3tpa175sb"]
 
 [ext_resource type="Texture2D" uid="uid://bja31mnta3v3d" path="res://scenes/quests/story_quests/nudo_rojo/assets/images/mensajeCartel.png" id="1_23fq7"]
+[ext_resource type="Texture2D" uid="uid://cuh1n3j568nv6" path="res://scenes/quests/story_quests/nudo_rojo/assets/images/Letrero_mensaje_2.png" id="2_23fq7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iqxb5"]
 atlas = ExtResource("1_23fq7")
@@ -31,12 +32,8 @@ atlas = ExtResource("1_23fq7")
 region = Rect2(0, 0, 128, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mbk5v"]
-atlas = ExtResource("1_23fq7")
-region = Rect2(512, 0, 128, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gyvbk"]
-atlas = ExtResource("1_23fq7")
-region = Rect2(640, 0, 128, 192)
+atlas = ExtResource("2_23fq7")
+region = Rect2(0, 0, 96, 96)
 
 [resource]
 animations = [{
@@ -74,9 +71,6 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mbk5v")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gyvbk")
 }],
 "loop": true,
 "name": &"solved",

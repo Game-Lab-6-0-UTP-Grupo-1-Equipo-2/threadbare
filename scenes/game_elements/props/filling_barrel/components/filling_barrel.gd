@@ -50,6 +50,7 @@ var _amount: int = 0
 @onready var collision_shape_2d: CollisionShape2D = %CollisionShape2D
 @onready var hit_box: StaticBody2D = %HitBox
 
+@onready var texto_pocion: Label = get_node_or_null("Label")
 
 func _set_color(new_color: Color) -> void:
 	color = new_color
@@ -77,6 +78,10 @@ func _ready() -> void:
 
 	if barrel_glow:
 		barrel_glow.visible = false
+	if texto_pocion:
+		texto_pocion.text = label
+		if not Engine.is_editor_hint():
+			texto_pocion.visible = false
 
 
 func set_is_locked(locked: bool) -> void:
@@ -105,10 +110,18 @@ func increment(by: int = 1) -> void:
 	animated_sprite_2d.frame = floor(float(_amount) / needed_amount * _total_frames())
 	if _amount >= needed_amount:
 		_disable_collisions.call_deferred()
+		
+		if texto_pocion:
+			texto_pocion.visible = true
+			var posicion_global = texto_pocion.global_position
+			texto_pocion.get_parent().remove_child(texto_pocion)
+			get_parent().add_child(texto_pocion)
+			texto_pocion.global_position = posicion_global
+		
 		await animation_player.animation_finished
 		animation_player.play(&"completed")
 		await animation_player.animation_finished
-		queue_free()
+		##queue_free()
 		completed.emit()
 
 

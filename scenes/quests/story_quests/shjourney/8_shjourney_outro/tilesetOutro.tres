@@ -922,7 +922,7 @@ texture_region_size = Vector2i(64, 64)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_llnx2"]
 texture = ExtResource("24_ngagm")
-texture_region_size = Vector2i(64, 64)
+texture_region_size = Vector2i(84, 96)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_26snb"]

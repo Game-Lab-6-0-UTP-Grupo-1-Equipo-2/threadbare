@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ca5s6kmtfd8rb"]
 
 [ext_resource type="Script" uid="uid://bofv3bcwj3rx2" path="res://scenes/game_elements/props/projectile/components/projectile.gd" id="1_jle26"]
-[ext_resource type="SpriteFrames" uid="uid://bnkitv06b22ap" path="res://scenes/quests/story_quests/nudo_rojo/2_combat/combat_components/nudo_rojo_projectile_spriteframes.tres" id="2_32ded"]
+[ext_resource type="Texture2D" uid="uid://dhwi0ibdv2qdq" path="res://scenes/quests/story_quests/nudo_rojo/assets/images/projectile.png" id="2_jle26"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6bowc"]
 friction = 0.0
@@ -9,6 +9,35 @@ bounce = 1.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0cqva"]
 size = Vector2(44, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_32ded"]
+atlas = ExtResource("2_jle26")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6bowc"]
+atlas = ExtResource("2_jle26")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0cqva"]
+atlas = ExtResource("2_jle26")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_502wq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_32ded")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6bowc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0cqva")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="NudoRojoProjectile" type="RigidBody2D" unique_id=1611529190 groups=["projectiles"]]
 collision_layer = 256
@@ -31,7 +60,9 @@ position = Vector2(-3, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VisibleThings" unique_id=1816818143]
 unique_name_in_owner = true
-sprite_frames = ExtResource("2_32ded")
+modulate = Color(0, 0, 0, 1)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_502wq")
 autoplay = "default"
 
 [node name="TrailFXMarker" type="Marker2D" parent="VisibleThings" unique_id=771420475]
